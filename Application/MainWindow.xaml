@@ -3,10 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Application"
+        xmlns:local="clr-namespace:Application" 
+        xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <telerik:RadGridView x:Name="CurrenciesGridView"
+                     AutoGenerateColumns="False"
+                     ShowGroupPanel="False"
+                     CellEditEnded="OnCellEditEnded">
+        <telerik:RadGridView.Columns>
+            <telerik:GridViewDataColumn Width="*" IsReadOnly="True" DataMemberBinding="{Binding Date}" Header="Date"/>
+            <telerik:GridViewDataColumn Width="*" IsReadOnly="False" DataMemberBinding="{Binding Abbreviation}" Header="Abbreviation" />
+            <telerik:GridViewDataColumn Width="*" IsReadOnly="True" DataMemberBinding="{Binding Name}" Header="Name" />
+            <telerik:GridViewDataColumn Width="*" IsReadOnly="False" DataMemberBinding="{Binding OfficialRate}" Header="Official Rate" />
+        </telerik:RadGridView.Columns>
+    </telerik:RadGridView>
 </Window>
