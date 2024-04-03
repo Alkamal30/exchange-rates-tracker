@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Application.Models
+namespace Application.Model.Models
 {
     public class CurrencyRate
     {

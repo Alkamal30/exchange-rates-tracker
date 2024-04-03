@@ -1,9 +1,9 @@
-﻿using Application.Infrastructure.Providers.Abstraction;
-using Application.Models;
+﻿using Application.Model.Infrastructure.Providers.Abstraction;
+using Application.Model.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Application.Infrastructure.Providers.ExchangeRates
+namespace Application.Model.Infrastructure.Providers.ExchangeRates
 {
     public class NbrbExchangeRatesResponse : IApiResponse<CurrencyRate>
     {

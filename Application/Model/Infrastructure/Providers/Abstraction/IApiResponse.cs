@@ -1,4 +1,4 @@
-﻿namespace Application.Infrastructure.Providers.Abstraction
+﻿namespace Application.Model.Infrastructure.Providers.Abstraction
 {
     public interface IApiResponse<out TData> where TData : new()
     {

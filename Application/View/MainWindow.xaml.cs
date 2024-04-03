@@ -1,4 +1,4 @@
-﻿using Application.Models;
+﻿using Application.Model.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Application
+namespace Application.View
 {
     public partial class MainWindow : Window
     {
