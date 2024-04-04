@@ -4,13 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Application.View" 
+        xmlns:vm="clr-namespace:Application.ViewModel"
         xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="OnWindowLoaded">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <telerik:RadGridView x:Name="CurrenciesGridView"
                      AutoGenerateColumns="False"
                      ShowGroupPanel="False"
-                     CellEditEnded="OnCellEditEnded">
+                     ItemsSource="{Binding CurrencyRates}">
         <telerik:RadGridView.Columns>
             <telerik:GridViewDataColumn Width="*" IsReadOnly="True" DataMemberBinding="{Binding Date}" Header="Date"/>
             <telerik:GridViewDataColumn Width="*" IsReadOnly="False" DataMemberBinding="{Binding Abbreviation}" Header="Abbreviation" />
