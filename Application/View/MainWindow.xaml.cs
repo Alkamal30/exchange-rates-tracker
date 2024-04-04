@@ -1,11 +1,6 @@
-﻿using Application.Model.Models;
-using Application.ViewModel;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using Application.ViewModel;
 using System.Windows;
+using Telerik.Windows.Controls;
 
 namespace Application.View
 {
@@ -21,6 +16,18 @@ namespace Application.View
             MainWindowViewModel viewModel = DataContext as MainWindowViewModel;
 
             viewModel?.LoadDataCommand.Execute(null);
+        }
+
+        private void OnCellEditEnded(object sender, GridViewCellEditEndedEventArgs e)
+        {
+            if(e.OldData.Equals(e.NewData))
+            {
+                return;
+            }
+
+            MainWindowViewModel viewModel = DataContext as MainWindowViewModel;
+
+            viewModel?.UpdateCellValueCommand.Execute(null);
         }
     }
 }

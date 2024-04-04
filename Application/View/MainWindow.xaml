@@ -15,7 +15,8 @@
     <telerik:RadGridView x:Name="CurrenciesGridView"
                      AutoGenerateColumns="False"
                      ShowGroupPanel="False"
-                     ItemsSource="{Binding CurrencyRates}">
+                     ItemsSource="{Binding CurrencyRates}"
+                     CellEditEnded="OnCellEditEnded">
         <telerik:RadGridView.Columns>
             <telerik:GridViewDataColumn Width="*" IsReadOnly="True" DataMemberBinding="{Binding Date}" Header="Date"/>
             <telerik:GridViewDataColumn Width="*" IsReadOnly="False" DataMemberBinding="{Binding Abbreviation}" Header="Abbreviation" />
